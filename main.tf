@@ -4,7 +4,7 @@ provider "launchdarkly" {
 }
 
 module "launchdarkly_prod" {
-  source = "./modules/projects-module"
+  source = "./modules/ld-scaffold"
 
   project_names     = var.project_names
   environment_names = var.environment_names

@@ -1,50 +1,30 @@
-provider "launchdarkly" {
-  version      = "~> 1.0"
-  access_token = var.launchdarkly_access_token
+resource "launchdarkly_project" "project" {
+  for_each = toset(var.project_names)
+  key  = "${each.value}-project"
+  name = each.value
+
+  tags = var.tags
+
+  dynamic "environments" {
+    for_each = toset(var.environment_names)
+    content {
+        name = environments.value
+        key = lower(environments.value)
+        color = var.env_color
+        tags = var.tags
+    }
+  }
 }
 
-resource "launchdarkly_project" "projects" {
-  count = length(var.project_names)
-  name  = element(var.project_names, count.index)
-  key   = "${element(var.project_names,count.index)}-project"
+resource "launchdarkly_custom_role" "roles" {
+  for_each = toset(var.project_names)
+  key = "${each.value}-role-key"
+  name = "${each.value}-role"
+  description = "Allow full access to ${each.value} project."
 
-  tags = [
-    "terraform"
-  ]
-
-  environments {
-   name = "Production"
-   key = "production"
-   color = "0a8b2f"
-   tags = [
-     "terraform"
-   ]
+  policy {
+    effect    = "allow"
+    resources = ["proj/${each.value}"]
+    actions   = ["*"]
   }
-
-  environments {
-   name = "AAT"
-   key = "aat"
-   color = "0a8b2f"
-   tags = [
-     "terraform"
-   ]
-  }
-
-  environments {
-   name = "Perftest"
-   key = "perftest"
-   color = "0a8b2f"
-   tags = [
-     "terraform"
-   ]
-   } 
-} 
-
-
-//resource "launchdarkly_environment" "environments" {
-//  name = "Aat"
-//  key = "aat"
-//color = "#0a8b2f"
-//  tags  = ["terraform", "staging"]
-//}
-
+}
