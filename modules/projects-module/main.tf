@@ -3,22 +3,15 @@ resource "launchdarkly_project" "project" {
   key  = "${each.value}-project"
   name = each.value
 
-  tags = [
-    "terraform",
-  ]
+  tags = var.tags
 
   dynamic "environments" {
-    for_each = [for env in var.environment_names: {
-      name = env.name
-      key = env.key
-      color = env.color
-      tags = env.tags
-    }]
+    for_each = toset(var.environment_names)
     content {
-        name = environments.value.name
-        key = environments.value.key
-        color = environments.value.color
-        tags = environments.value.tags
+        name = environments.value
+        key = lower(environments.value)
+        color = var.env_color
+        tags = var.tags
     }
   }
 }

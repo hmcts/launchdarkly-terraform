@@ -1,30 +1,7 @@
 environment_names = [
-  {
-    name  = "Production"
-    key   = "production"
-    color = "0a8b2f"
-    tags = [
-      "terraform",
-    ]
-  },
-
-  {
-    name  = "AAT"
-    key   = "aat"
-    color = "0a8b2f"
-    tags = [
-      "terraform", "AAT"
-    ]
-  },
-
-  {
-    name  = "Perftest"
-    key   = "perftest"
-    color = "0a8b2f"
-    tags = [
-      "terraform", "perftest"
-    ]
-  }
+  "Production", 
+  "AAT", 
+  "Perftest"
 ]
 
 project_names = [
