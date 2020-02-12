@@ -8,7 +8,11 @@ trigger:
     - master
     
 variables:
+<<<<<<< HEAD
   terraformVersion: 0.12.20
+=======
+  terraformVersion: 0.12.6
+>>>>>>> 541293353b3390e2f9367d4535208b2729058388
   agentPool: 'ubuntu-18.04'
   action:
 
@@ -35,4 +39,8 @@ stages:
             inputs:
               testResultsFormat: NUnit
               failTaskOnFailedTests: true
+<<<<<<< HEAD
             condition: always()
+=======
+            condition: always()
+>>>>>>> 541293353b3390e2f9367d4535208b2729058388
