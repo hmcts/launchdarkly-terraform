@@ -1,15 +1,9 @@
 variable "environment_names" {
   description = "Create environments with these names"
-  type = list
-}
-
-variable "launchdarkly_access_token" {
-  description = "The Launchdarkly access token required to provision resources"
 }
 
 variable "project_names" {
   description = "Create projects with these names"
-  type        = list
 }
 
 variable "env_color" {
@@ -22,4 +16,13 @@ variable "tags" {
   default = [
     "terraform",
   ]
+}
+
+variable "launchdarkly_token" {
+  description = "Map containing details to retrieve the launchdarkly token required by the provider"
+  default = {
+    launchdarkly_kv_name = "rpe-prod"
+    launchdarkly_kv_rg = "rpe-prod"
+    launchdarkly_kv_secret_name = "ld-automation-token"
+  }
 }

@@ -5,8 +5,12 @@ environment_names = [
 ]
 
 project_names = [
-  "Platform",
-  "IDAM"
+  {
+    name = "Platform"
+    azuread_group = "dcd_group_ld_automation"
+  },
+  { 
+    name = "IDAM"
+    azuread_group = "dcd_group_ld_automation2"
+  }
 ]
-
-launchdarkly_access_token = "api-31647482-f23c-4630-ab3d-72763a50e873"

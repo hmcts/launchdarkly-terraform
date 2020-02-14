@@ -12,3 +12,6 @@ variable "env_color" {
 
 variable "tags" {
 }
+
+variable "launchdarkly_token" {}
+
