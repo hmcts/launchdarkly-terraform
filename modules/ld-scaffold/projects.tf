@@ -13,7 +13,7 @@ resource "launchdarkly_project" "project" {
     content {
         name = environments.value
         key = lower(environments.value)
-        color = var.env_color
+        color = "0a8b2f"
         tags = var.tags
     }
   }
