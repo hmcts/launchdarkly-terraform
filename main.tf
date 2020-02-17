@@ -5,8 +5,8 @@ provider "azurerm" {
 module "launchdarkly" {
   source = "./modules/ld-scaffold"
 
-  project_names      = var.project_names
-  environment_names  = var.environment_names
-  tags               = var.tags
+  project      = var.projects
+  environment  = var.environments
+  tags         = var.tags
 }
 

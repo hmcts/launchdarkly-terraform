@@ -1,10 +1,10 @@
-environment_names = [
+environments = [
   "Production", 
   "AAT", 
   "Perftest"
 ]
 
-project_names = [
+projects = [
   {
     name = "Platform"
     azuread_group = "dcd_group_ld_automation"

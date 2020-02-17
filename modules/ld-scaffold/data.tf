@@ -3,7 +3,7 @@ data "azurerm_key_vault" "launchdarkly" {
     resource_group_name = "core-infra-intsvc-rg"
 }
 
-data "azurerm_key_vault_secret" "launchdarkly_kv_secret" {
+data "azurerm_key_vault_secret" "launchdarkly-access" {
     name = "launchdarkly-access-token"
     key_vault_id = data.azurerm_key_vault.launchdarkly.id
 }

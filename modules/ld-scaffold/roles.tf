@@ -1,6 +1,6 @@
 resource "launchdarkly_custom_role" "roles" {
   for_each = {
-    for project in var.project_names: 
+    for project in var.project: 
     project.name => project 
   }
 

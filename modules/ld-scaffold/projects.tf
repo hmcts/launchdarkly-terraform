@@ -1,6 +1,6 @@
 resource "launchdarkly_project" "project" {
   for_each = {
-    for project in var.project_names: 
+    for project in var.project: 
     project.name => project 
   }
   key  = "${each.value.name}-project"
@@ -9,7 +9,7 @@ resource "launchdarkly_project" "project" {
   tags = var.tags
 
   dynamic "environments" {
-    for_each = toset(var.environment_names)
+    for_each = toset(var.environment)
     content {
         name = environments.value
         key = lower(environments.value)

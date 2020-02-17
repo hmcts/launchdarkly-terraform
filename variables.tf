@@ -1,8 +1,8 @@
-variable "environment_names" {
+variable "environments" {
   description = "Create environments with these names"
 }
 
-variable "project_names" {
+variable "projects" {
   description = "Create projects with these names"
 }
 
