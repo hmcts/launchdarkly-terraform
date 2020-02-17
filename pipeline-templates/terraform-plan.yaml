@@ -20,7 +20,7 @@ steps:
       command: 'plan'
       commandOptions: '-out=launchdarkly${{ parameters.build }}plan'
       workingDirectory: '$(System.DefaultWorkingDirectory)'
-      environmentServiceName: 'Reform-CFT-Mgmt'
+      environmentServiceName: 'DTS-CFTPTL-INTSVC'
   - task: Bash@3
     displayName: "Remove local tfstate"
     inputs:
