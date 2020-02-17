@@ -11,12 +11,12 @@ jobs:
               displayName: 'Download artifacts'
               artifact: drop
             - download: current
-              displayName: 'Download tfplan'
-              artifact: launchdarkly-plan
+              displayName: 'Download tfplan launchdarkly'
+              artifact: launchdarkly${{ parameters.build }}plan
             - task: CopyFiles@2
               inputs:
-                sourceFolder: '$(Pipeline.Workspace)/launchdarkly-plan'
-                targetFolder: '$(Pipeline.Workspace)'
+                sourceFolder: '$(Pipeline.Workspace)/launchdarkly${{ parameters.build }}plan'
+                targetFolder: '$(Pipeline.Workspace)/drop'
             - task: TerraformInstaller@0
               inputs:
                 terraformVersion: ${{ parameters.terraformVersion }}
@@ -26,16 +26,16 @@ jobs:
                 command: 'init'
                 backendType: 'azurerm'
                 ensureBackend: true
-                backendServiceArm: 'Reform-CFT-Mgmt'
-                backendAzureRmResourceGroupName: 'reform-cft-mgmt'
-                backendAzureRmStorageAccountName: 'reformcftmgmt'
+                backendServiceArm: 'DTS-CFTPTL-INTSVC'
+                backendAzureRmResourceGroupName: 'core-infra-intsvc-rg'
+                backendAzureRmStorageAccountName: 'cftptlintsvc'
                 backendAzureRmContainerName: 'tfstate'
-                backendAzureRmKey: 'launchdarkly/launchdarkly.tfstate'
-                workingDirectory: '$(Pipeline.Workspace)'
+                backendAzureRmKey: 'launchdarkly.tfstate'
+                workingDirectory: '$(Pipeline.Workspace)/drop'
             - task: TerraformCLI@0
               displayName: Apply - launchdarkly
               inputs:
                 command: 'apply'
-                commandOptions: 'launchdarkly-plan'
-                environmentServiceName: 'Reform-CFT-Mgmt'
-                workingDirectory: '$(Pipeline.Workspace)'
+                commandOptions: 'launchdarkly${{ parameters.build }}plan'
+                environmentServiceName: 'DTS-CFTPTL-INTSVC'
+                workingDirectory: '$(Pipeline.Workspace)/drop'
