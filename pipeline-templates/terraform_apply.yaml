@@ -1,0 +1,41 @@
+jobs:
+  - deployment: Deploy
+    pool:
+      vmImage: ${{ parameters.agentPool }}
+    strategy:
+      # default deployment strategy
+      runOnce:
+        deploy:
+          steps:
+            - download: current
+              displayName: 'Download artifacts'
+              artifact: drop
+            - download: current
+              displayName: 'Download tfplan'
+              artifact: launchdarkly-plan
+            - task: CopyFiles@2
+              inputs:
+                sourceFolder: '$(Pipeline.Workspace)/launchdarkly-plan'
+                targetFolder: '$(Pipeline.Workspace)'
+            - task: TerraformInstaller@0
+              inputs:
+                terraformVersion: ${{ parameters.terraformVersion }}
+            - task: TerraformCLI@0
+              displayName: Init - launchdarkly
+              inputs:
+                command: 'init'
+                backendType: 'azurerm'
+                ensureBackend: true
+                backendServiceArm: 'Reform-CFT-Mgmt'
+                backendAzureRmResourceGroupName: 'reform-cft-mgmt'
+                backendAzureRmStorageAccountName: 'reformcftmgmt'
+                backendAzureRmContainerName: 'tfstate'
+                backendAzureRmKey: 'launchdarkly/launchdarkly.tfstate'
+                workingDirectory: '$(Pipeline.Workspace)'
+            - task: TerraformCLI@0
+              displayName: Apply - launchdarkly
+              inputs:
+                command: 'apply'
+                commandOptions: 'launchdarkly-plan'
+                environmentServiceName: 'Reform-CFT-Mgmt'
+                workingDirectory: '$(Pipeline.Workspace)'
