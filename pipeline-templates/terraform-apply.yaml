@@ -2,6 +2,7 @@ jobs:
   - deployment: Deploy
     pool:
       vmImage: ${{ parameters.agentPool }}
+    environment: mgmt.ld
     strategy:
       # default deployment strategy
       runOnce:
@@ -25,7 +26,6 @@ jobs:
               inputs:
                 command: 'init'
                 backendType: 'azurerm'
-                ensureBackend: true
                 backendServiceArm: 'DTS-CFTPTL-INTSVC'
                 backendAzureRmResourceGroupName: 'core-infra-intsvc-rg'
                 backendAzureRmStorageAccountName: 'cftptlintsvc'
