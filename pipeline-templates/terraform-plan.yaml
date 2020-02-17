@@ -8,9 +8,9 @@ steps:
       command: 'init'
       commandOptions: '-lock=false' # don't lock on PRs / validate phase
       backendType: 'azurerm'
-      backendServiceArm: 'Reform-CFT-Mgmt'
-      backendAzureRmResourceGroupName: 'reform-cft-mgmt'
-      backendAzureRmStorageAccountName: 'reformcftmgmt'
+      backendServiceArm: 'DTS-CFTPTL-INTSVC'
+      backendAzureRmResourceGroupName: 'core-infra-intsvc-rg'
+      backendAzureRmStorageAccountName: 'cftptlintsvc'
       backendAzureRmContainerName: 'tfstate'
       backendAzureRmKey: 'launchdarkly.tfstate'
       workingDirectory: '$(System.DefaultWorkingDirectory)'
