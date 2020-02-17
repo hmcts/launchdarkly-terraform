@@ -2,7 +2,7 @@ jobs:
   - deployment: Deploy
     pool:
       vmImage: ${{ parameters.agentPool }}
-    environment: mgmt.ld
+    environment: mgmt
     strategy:
       # default deployment strategy
       runOnce:
