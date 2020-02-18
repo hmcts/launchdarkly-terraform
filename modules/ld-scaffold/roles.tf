@@ -13,4 +13,28 @@ resource "launchdarkly_custom_role" "roles" {
     resources = ["proj/${each.value.name}"]
     actions   = ["*"]
   }
+
+  policy {
+    effect    = "allow"
+    resources = ["proj/${each.value.name}"]
+    actions   = ["*"]
+  }
+
+  policy {
+    effect = "allow"
+    resources = ["proj/${each.value.name}:env/*"]
+    actions   = ["*"]
+  }
+
+  policy {
+    effect = "allow"
+    resources = ["proj/${each.value.name}:env/*:flag/*"]
+    actions   = ["*"]
+  }
+
+  policy {
+    effect = "allow"
+    resources = ["proj/${each.value.name}:env/*:segment/*"]
+    actions   = ["*"]
+  }
 }
