@@ -54,7 +54,6 @@ stages:
           - task: PublishBuildArtifacts@1
             displayName: 'Publish Artifact: drop'
 
-  
   - stage: ApplyLaunchdarkly
     dependsOn: GetArtifacts
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
