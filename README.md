@@ -13,9 +13,3 @@ To add a new project, open the terraform.tfvars file and add the following:
 
     - Name of the project
     - Object ID of the Azure AD Group required in the prerequisites
-        
-
-
-
-
-
