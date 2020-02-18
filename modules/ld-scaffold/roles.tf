@@ -6,7 +6,7 @@ resource "launchdarkly_custom_role" "roles" {
 
   name = each.value.name
   key  = each.value.azuread_group
-  //description = "Allows development access to users in the AzureAD group ${each.value.name} for the ${each.value.name} project"
+  description = "Allows development access to users in the AzureAD group ${each.value.name} for the ${each.value.name} project"
 
   policy {
     effect    = "allow"
