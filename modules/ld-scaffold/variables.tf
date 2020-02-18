@@ -1,9 +1,9 @@
 variable "project" {
-    description ="list of project names"
+  description = "list of project names"
 }
 
 variable "environment" {
-    description = "list of environment names"
+  description = "list of environment names"
 }
 
 variable "tags" {
