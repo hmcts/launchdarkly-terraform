@@ -1,16 +1,11 @@
 environments = [
   "Production",
-  "AAT",
-  "Perftest"
+  "AAT"
 ]
 
 projects = [
   {
     name          = "Platform"
-    azuread_group = "dcd_group_ld_automation"
-  },
-  {
-    name          = "IDAM"
-    azuread_group = "dcd_group_ld_automation2"
+    azuread_group = "c36eaede-a0ae-4967-8fed-0a02960b1233"
   }
 ]
