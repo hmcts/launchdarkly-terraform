@@ -10,7 +10,6 @@ trigger:
 variables:
   terraformVersion: 0.12.20
   agentPool: 'ubuntu-18.04'
-  action:
 
 stages:
   - stage: GetArtifacts
@@ -36,3 +35,20 @@ stages:
               testResultsFormat: NUnit
               failTaskOnFailedTests: true
             condition: always()
+        
+      - template: pipeline-templates/terraform-plan.yaml
+        parameters:
+          build: $(Build.BuildNumber)  
+          agentPool: ${{ variables.agentPool }}
+          terraformVersion: ${{ variables.terraformVersion }}    
+
+  
+  - stage: ApplyLaunchdarkly
+    dependsOn: GetArtifacts
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    jobs: 
+      - template: pipeline-templates/terraform-apply.yaml
+        parameters:
+          build: $(Build.BuildNumber)
+          agentPool: ${{ variables.agentPool }}
+          terraformVersion: ${{ variables.terraformVersion }}

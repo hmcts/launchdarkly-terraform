@@ -1,0 +1,36 @@
+jobs:
+  - job: Plan_Launchdarkly
+    pool:
+      vmImage: ${{ parameters.agentPool }}
+    steps:
+      - task: TerraformInstaller@0
+        inputs:
+          terraformVersion: ${{ parameters.terraformVersion }}
+      - task: TerraformCLI@0
+        displayName: Init - launchdarkly
+        inputs:
+          command: 'init'
+          commandOptions: '-lock=false' # don't lock on PRs / validate phase
+          backendType: 'azurerm'
+          backendServiceArm: 'DTS-CFTPTL-INTSVC'
+          backendAzureRmResourceGroupName: 'core-infra-intsvc-rg'
+          backendAzureRmStorageAccountName: 'cftptlintsvc'
+          backendAzureRmContainerName: 'tfstate'
+          backendAzureRmKey: 'launchdarkly.tfstate'
+          workingDirectory: '$(System.DefaultWorkingDirectory)'
+      - task: TerraformCLI@0
+        displayName: Plan - launchdarkly
+        inputs:
+          command: 'plan'
+          commandOptions: '-out=launchdarkly${{ parameters.build }}plan'
+          workingDirectory: '$(System.DefaultWorkingDirectory)'
+          environmentServiceName: 'DTS-CFTPTL-INTSVC'
+      - task: Bash@3
+        displayName: "Remove local tfstate"
+        inputs:
+          targetType: 'inline'
+          workingDirectory: '$(System.DefaultWorkingDirectory)'
+          script: |
+            rm -f terraform.tfstate* && rm -rf .terraform/
+      - publish: $(System.DefaultWorkingDirectory)/launchdarkly${{ parameters.build }}plan
+        artifact: launchdarkly${{ parameters.build }}plan
