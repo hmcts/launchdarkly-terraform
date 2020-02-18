@@ -1,6 +1,6 @@
 environments = [
   "Production",
-  "AAT"
+  "Test"
 ]
 
 projects = [
