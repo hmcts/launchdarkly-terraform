@@ -1,7 +1,3 @@
-provider "azurerm" {
-  version = "=1.44.0"
-}
-
 module "launchdarkly" {
   source = "./modules/ld-scaffold"
 
