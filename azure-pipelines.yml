@@ -6,6 +6,9 @@ trigger:
   branches:
     include:
     - master
+  pr:
+  - master
+  
     
 variables:
   terraformVersion: 0.12.20
