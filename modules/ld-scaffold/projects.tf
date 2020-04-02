@@ -3,7 +3,7 @@ resource "launchdarkly_project" "project" {
     for project in var.project :
     project.name => project
   }
-  key  = "${each.value.name}-project"
+  key  = "${each.value.name}"
   name = each.value.name
 
   tags = var.tags
