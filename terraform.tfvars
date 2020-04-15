@@ -11,5 +11,9 @@ projects = [
   {
     name          = "Probate"
     azuread_group = "34a305d0-6acb-4bdc-a361-fbd83bd083f8"
+  },
+  {
+    name          = "PCQ"
+    azuread_group = "b2f9e34b-d9b6-41aa-b7a6-7ccc82b8b7bb"
   }
 ]
