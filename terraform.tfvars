@@ -21,7 +21,7 @@ projects = [
     azuread_group = "c77e7556-7299-46c0-b130-ab0267ffb98e"
   },
   {
-    name          = "Fees&Pay"
+    name          = "Fees-Pay"
     azuread_group = "84461f8a-5715-49d3-b395-7022d1d78daf"
   }
 ]
