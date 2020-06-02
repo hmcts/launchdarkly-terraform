@@ -23,5 +23,9 @@ projects = [
   {
     name          = "Fees-Pay"
     azuread_group = "84461f8a-5715-49d3-b395-7022d1d78daf"
+  },
+  {
+    name          = "SSCS"
+    azuread_group = "0c991f70-d3c9-482d-80c9-174f4c8dea7c"
   }
 ]
