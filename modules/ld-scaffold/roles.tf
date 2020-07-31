@@ -27,7 +27,7 @@ resource "launchdarkly_custom_role" "roles" {
   }
 
   policy {
-    effect    = "Deny"
+    effect    = "deny"
     resources = ["proj/${each.value.name}:env/*"]
     actions   = ["createEnvironment", "deleteEnvironment"]
   }
