@@ -31,5 +31,9 @@ projects = [
   {
     name          = "rd"
     azuread_group = "0c8aafd2-5bf5-45c6-b76e-ce0422b77c1d"
+  },
+  {
+    name          = "am"
+    azuread_group = "33a201a6-aae5-4bae-a762-b12f919705ef"
   }
 ]
