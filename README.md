@@ -5,7 +5,14 @@ Terraform to create/manage projects within Launchdarkly. Feature toggles are cre
 
 ## Prerequisites:
 
-A request to the DevOps team to create an Azure AD Group granting access to the LaunchDarkly application and include all users that will require access. You will require the Object ID of the Azure AD Group to complete the setup. 
+A team Azure Active Directory group, this is normally setup when you join, but if you don't have one ask the Platform Operations team to create it for you. 
+
+You will require the Object ID of the Azure AD Group to complete the setup.
+
+The ID can be looked up with:
+```shell
+az ad group list --query "[?contains(displayName, 'cmc')].{DisplayName: displayName, ObjectID: objectId}" -o table
+```
 
 ## Steps: 
 
