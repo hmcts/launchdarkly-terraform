@@ -39,5 +39,9 @@ projects = [
   {
     name          = "unspec"
     azuread_group = "40c33f5a-24d0-4b22-a923-df8a80a59cd9"
+  },
+  {
+    name          = "DTSplatformoperations"
+    azuread_group = "e7ea2042-4ced-45dd-8ae3-e051c6551789"
   }
 ]
