@@ -1,12 +1,8 @@
 # Docs:
 # https://aka.ms/yaml
 
-trigger:
-  batch: true
-  branches:
-    include:
-    - master
-    
+trigger: none
+
 variables:
   terraformVersion: 0.12.20
   agentPool: 'ubuntu-18.04'
