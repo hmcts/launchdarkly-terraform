@@ -3,7 +3,7 @@ name: offboard-launchdarkly-user
 pr:
   paths:
     include:
-      - azure-pipelines-launchdarkely-offboard.yml
+      - azure-pipelines-launchdarkly-offboard.yml
 
 schedules:
 - cron: "0 12 * * 0"
