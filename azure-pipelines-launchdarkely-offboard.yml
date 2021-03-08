@@ -1,0 +1,28 @@
+name: offboard-launchdarkly-user
+
+pr:
+  paths:
+    include:
+      - azure-pipelines-launchdarkely-offboard.yml
+
+schedules:
+- cron: "0 12 * * 0"
+  displayName: cd Weekly Sunday 
+  always: true
+
+variables:
+  timeoutInMinutes: 60
+  agentPool: 'ubuntu-18.04'
+  
+stages:
+  - stage: launchdarkly-offboard-users
+    jobs:
+      - job: launchdarkly
+        timeoutInMinutes: ${{ variables.timeoutInMinutes }}
+        pool:
+          vmImage: ${{ variables.agentPool }}
+        steps:
+        - task: Bash@3
+          displayName: 'Remove user from launchdarkly'
+          inputs:
+            filePath: pipeline-scripts/launchdarkly-offboard.sh
