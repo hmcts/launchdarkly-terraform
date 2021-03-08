@@ -1,5 +1,4 @@
 name: offboard-launchdarkly-user
-
 pr:
   paths:
     include:
