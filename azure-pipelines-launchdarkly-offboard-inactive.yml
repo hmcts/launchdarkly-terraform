@@ -7,10 +7,10 @@ pr:
 
 schedules:
 - cron: "0 12 * * 0"
-  displayName:  Weekly Sunday 
+  displayName: 12am every Sunday
   branches:
     include:
-    - main
+    - master 
   always: true
 
 variables:
