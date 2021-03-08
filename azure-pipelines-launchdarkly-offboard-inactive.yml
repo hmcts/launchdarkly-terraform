@@ -3,22 +3,22 @@ name: offboard-launchdarkly-user
 pr:
   paths:
     include:
-      - azure-pipelines-launchdarkly-offboard.yml
+      - azure-pipelines-launchdarkly-offboard-inactive.yml
 
-resources:
-  webhooks:
-    - webhook: userOffboardingWebhook
-      connection: userOffboardingWebhook
-      filters:
-        - path: job
-          value: "user-offboarding-NmD%wY-bhWuo"
+schedules:
+- cron: "0 12 * * 0"
+  displayName:  Weekly Sunday 
+  branches:
+    include:
+    - main
+  always: true
 
 variables:
   timeoutInMinutes: 60
   agentPool: 'ubuntu-18.04'
   
 stages:
-  - stage: launchdarkly-offboard-users
+  - stage: launchdarkly-offboard-inactive-users
     jobs:
       - job: launchdarkly
         timeoutInMinutes: ${{ variables.timeoutInMinutes }}
@@ -37,5 +37,4 @@ stages:
           inputs:
             filePath: pipeline-scripts/launchdarkly-offboard.sh
           env:
-            EMAIL:  ${{ parameters.userOffboardingWebhook.SearchResults.tables[0].rows[0][0] }}
             TOKEN: $(launchdarkly-access-token)
