@@ -1,13 +1,13 @@
-name: offboard-launchdarkely-user
+name: offboard-launchdarkly-user
 
 pr:
   paths:
     include:
-      - azure-pipelines-launchdarkely-offboard.yml
+      - azure-pipelines-launchdarkly-offboard.yml
 
 schedules:
 - cron: "0 12 * * 0"
-  displayName: cd Weekly Sunday 
+  displayName: Run Weekly Sunday 
   always: true
 
 variables:
@@ -22,7 +22,16 @@ stages:
         pool:
           vmImage: ${{ variables.agentPool }}
         steps:
+        - task: AzureKeyVault@1
+          displayName: 'Get API token'
+          inputs:
+            runAsPreJob: false
+            ConnectedServiceName: 'DTS-CFTPTL-INTSVC'
+            keyVaultName: 'cftptl-intsvc'
+            secretsFilter: 'launchdarkly-access-token'
         - task: Bash@3
           displayName: 'Remove user from launchdarkly'
           inputs:
             filePath: pipeline-scripts/launchdarkly-offboard.sh
+          env:
+            TOKEN: $(launchdarkly-access-token)
