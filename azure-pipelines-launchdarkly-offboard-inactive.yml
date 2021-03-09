@@ -1,0 +1,40 @@
+name: Offboard-launchdarkly-Inactive-user
+
+pr:
+  paths:
+    include:
+      - azure-pipelines-launchdarkly-offboard-inactive.yml
+
+schedules:
+- cron: "0 12 * * 0"
+  displayName: 12am every Sunday
+  branches:
+    include:
+    - master 
+  always: true
+
+variables:
+  timeoutInMinutes: 60
+  agentPool: 'ubuntu-18.04'
+  
+stages:
+  - stage: launchdarkly-offboard-inactive-users
+    jobs:
+      - job: launchdarkly
+        timeoutInMinutes: ${{ variables.timeoutInMinutes }}
+        pool:
+          vmImage: ${{ variables.agentPool }}
+        steps:
+        - task: AzureKeyVault@1
+          displayName: 'Get API token'
+          inputs:
+            runAsPreJob: false
+            ConnectedServiceName: 'DTS-CFTPTL-INTSVC'
+            keyVaultName: 'cftptl-intsvc'
+            secretsFilter: 'launchdarkly-access-token'
+        - task: Bash@3
+          displayName: 'Remove user from launchdarkly'
+          inputs:
+            filePath: pipeline-scripts/launchdarkly-offboard.sh
+          env:
+            TOKEN: $(launchdarkly-access-token)
