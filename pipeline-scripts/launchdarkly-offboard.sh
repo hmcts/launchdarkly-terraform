@@ -19,6 +19,7 @@ do
     then
       echo "Deleting user $EMAIL"
       deleteuser $id
+      exit 0
     fi
    #  delete an user if previous login time is empty
     if [[ -z $lastseen ]]
