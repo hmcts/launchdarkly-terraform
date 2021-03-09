@@ -18,7 +18,7 @@ variables:
   agentPool: 'ubuntu-18.04'
   
 stages:
-  - stage: launchdarkly-offboard-inactive-users
+  - stage: launchdarkly_Offboard_InactiveUsers
     jobs:
       - job: launchdarkly
         timeoutInMinutes: ${{ variables.timeoutInMinutes }}
