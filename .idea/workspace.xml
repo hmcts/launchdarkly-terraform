@@ -31,7 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08aa95fd-99b3-4baa-88d6-94516413fa6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/delete/launchdarkly-offboard.sh" beforeDir="false" afterPath="$PROJECT_DIR$/delete/launchdarkly-offboard.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
