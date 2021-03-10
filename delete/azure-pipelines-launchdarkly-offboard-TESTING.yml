@@ -29,14 +29,6 @@ stages:
             keyVaultName: 'cftptl-intsvc'
             secretsFilter: 'launchdarkly-access-token'
         - task: Bash@3
-          displayName: 'value'
-          inputs:
-            targetType: Inline
-            script: echo $TOKEN
-          env:
-            TOKEN: $(launchdarkly-access-token)
-
-        - task: Bash@3
           displayName: 'Remove user from launchdarkly'
           inputs:
             filePath: delete/launchdarkly-offboard.sh

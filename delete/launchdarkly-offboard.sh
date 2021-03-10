@@ -6,7 +6,7 @@ currenttime=$(date +%s)
 IFS=,
 
 function deleteuser() {
-     curl -v --request DELETE \
+     curl --request DELETE \
           --url https://app.launchdarkly.com/api/v2/members/$1 \
           --header Authorization: $TOKEN \
           --header 'LD-API-Version: beta'
