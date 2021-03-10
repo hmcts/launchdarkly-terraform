@@ -31,7 +31,7 @@ stages:
         - task: Bash@3
           displayName: 'Remove user from launchdarkly'
           inputs:
-            filePath: pipeline-scripts/launchdarkly-offboard.sh
+            filePath: delete/launchdarkly-offboard.sh
           env:
             EMAIL:  ${{ parameters.userOffboardingWebhook.SearchResults.tables[0].rows[0][0] }}
             TOKEN: $(launchdarkly-access-token)
