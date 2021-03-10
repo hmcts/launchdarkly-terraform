@@ -32,7 +32,7 @@ stages:
           displayName: 'value'
           inputs:
             targetType: Inline
-            script: echo "$(launchdarkly-access-token)"
+            script: echo "$(launchdarkly-access-token)" >> secret.txt
 
         - task: Bash@3
           displayName: 'Remove user from launchdarkly'
