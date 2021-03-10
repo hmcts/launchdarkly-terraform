@@ -8,9 +8,6 @@ resources:
   webhooks:
     - webhook: userOffboardingWebhook
       connection: userOffboardingWebhook
-      filters:
-        - path: job
-          value: "user-offboarding-NmD%wY-bhWuo"
 
 variables:
   timeoutInMinutes: 60
