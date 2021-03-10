@@ -1,0 +1,37 @@
+name: offboard-launchdarkly-user-TESTING
+pr:
+  paths:
+    include:
+      - azure-pipelines-launchdarkly-offboard.yml
+
+resources:
+  webhooks:
+    - webhook: userOffboardingWebhook
+      connection: userOffboardingWebhook
+
+variables:
+  timeoutInMinutes: 60
+  agentPool: 'ubuntu-18.04'
+  
+stages:
+  - stage: launchdarkly_Offboard_Users
+    jobs:
+      - job: launchdarkly
+        timeoutInMinutes: ${{ variables.timeoutInMinutes }}
+        pool:
+          vmImage: ${{ variables.agentPool }}
+        steps:
+        - task: AzureKeyVault@1
+          displayName: 'Get API token'
+          inputs:
+            runAsPreJob: false
+            ConnectedServiceName: 'DTS-CFTPTL-INTSVC'
+            keyVaultName: 'cftptl-intsvc'
+            secretsFilter: 'launchdarkly-access-token'
+        - task: Bash@3
+          displayName: 'Remove user from launchdarkly'
+          inputs:
+            filePath: pipeline-scripts/launchdarkly-offboard.sh
+          env:
+            EMAIL:  ${{ parameters.userOffboardingWebhook.SearchResults.tables[0].rows[0][0] }}
+            TOKEN: $(launchdarkly-access-token)
