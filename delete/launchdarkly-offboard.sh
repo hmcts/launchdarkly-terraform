@@ -5,10 +5,11 @@ window=5097615
 currenttime=$(date +%s)
 IFS=,
 
+
 function deleteuser() {
-     curl --request DELETE \
+        curl --request DELETE \
           --url https://app.launchdarkly.com/api/v2/members/$1 \
-          --header Authorization: $TOKEN \
+          --header 'Authorization: $TOKEN' \
           --header 'LD-API-Version: beta'
 
 }
