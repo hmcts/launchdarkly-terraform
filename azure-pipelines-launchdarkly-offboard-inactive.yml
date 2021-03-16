@@ -1,6 +1,17 @@
 name: Offboard-launchdarkly-Inactive-user
 
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+  paths:
+    include:
+      - azure-pipelines-launchdarkly-offboard-inactive.yml
 pr:
+  branches:
+    include:
+      - '*'
   paths:
     include:
       - azure-pipelines-launchdarkly-offboard-inactive.yml

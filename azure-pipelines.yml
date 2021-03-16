@@ -6,6 +6,33 @@ trigger:
   branches:
     include:
     - master
+  paths:
+    include:
+      - ci/*
+      - modules/*
+      - pipeline-scripts/*
+      - pipeline-templates/*
+      - azure-pipelines.yml
+      - main.tf
+      - provider.tf
+      - terraform.tfvars
+      - variables.tf
+
+pr:
+  branches:
+    include:
+      - '*'
+  paths:
+    include:
+      - ci/*
+      - modules/*
+      - pipeline-scripts/*
+      - pipeline-templates/*
+      - azure-pipelines.yml
+      - main.tf
+      - provider.tf
+      - terraform.tfvars
+      - variables.tf
 
 variables:
   terraformVersion: 0.12.20
