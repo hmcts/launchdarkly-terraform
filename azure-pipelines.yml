@@ -7,6 +7,16 @@ trigger:
     include:
     - master
   paths:
+    include:
+      - ci/*
+      - modules/*
+      - pipeline-scripts/*
+      - pipeline-templates/*
+      - azure-pipelines.yml
+      - main.tf
+      - provider.tf
+      - terraform.tfvars
+      - variables.tf
     exclude:
       - azure-pipelines-launchdarkly-offboard-inactive.yml
       - azure-pipelines-launchdarkly-offboard.yml
@@ -15,6 +25,16 @@ pr:
     include:
       - '*'
   paths:
+    include:
+      - ci/*
+      - modules/*
+      - pipeline-scripts/*
+      - pipeline-templates/*
+      - azure-pipelines.yml
+      - main.tf
+      - provider.tf
+      - terraform.tfvars
+      - variables.tf
     exclude:
       - azure-pipelines-launchdarkly-offboard-inactive.yml
       - azure-pipelines-launchdarkly-offboard.yml
