@@ -17,9 +17,7 @@ trigger:
       - provider.tf
       - terraform.tfvars
       - variables.tf
-    exclude:
-      - azure-pipelines-launchdarkly-offboard-inactive.yml
-      - azure-pipelines-launchdarkly-offboard.yml
+
 pr:
   branches:
     include:
@@ -35,9 +33,6 @@ pr:
       - provider.tf
       - terraform.tfvars
       - variables.tf
-    exclude:
-      - azure-pipelines-launchdarkly-offboard-inactive.yml
-      - azure-pipelines-launchdarkly-offboard.yml
 
 variables:
   terraformVersion: 0.12.20
