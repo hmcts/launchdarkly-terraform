@@ -6,6 +6,18 @@ trigger:
   branches:
     include:
     - master
+  paths:
+    exclude:
+      - azure-pipelines-launchdarkly-offboard-inactive.yml
+      - azure-pipelines-launchdarkly-offboard.yml
+pr:
+  branches:
+    include:
+      - '*'
+  paths:
+    exclude:
+      - azure-pipelines-launchdarkly-offboard-inactive.yml
+      - azure-pipelines-launchdarkly-offboard.yml
 
 variables:
   terraformVersion: 0.12.20
