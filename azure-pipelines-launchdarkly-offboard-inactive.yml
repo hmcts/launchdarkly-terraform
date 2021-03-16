@@ -16,7 +16,6 @@ pr:
     include:
       - azure-pipelines-launchdarkly-offboard-inactive.yml
 
-
 schedules:
 - cron: "0 12 * * 0"
   displayName: 12am every Sunday
