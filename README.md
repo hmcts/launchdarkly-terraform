@@ -1,5 +1,5 @@
 # launchdarkly-terraform
-Terraform to create/manage projects within Launchdarkly. Feature toggles are created directly in the LaunchDarkly portal. 
+Terraform to create/manage projects within Launchdarkly. Feature toggles are created directly in the LaunchDarkly portal.
 
 # Adding a new project
 
@@ -29,4 +29,3 @@ Example:
 
 Where - name = the name of the project/team.
       - azuread_group= Object ID of the Azure AD Group required in the prerequisites
-
