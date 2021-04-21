@@ -46,6 +46,6 @@ projects = [
   },
   {
    name          = "FaCT"
-   azuread_group = "345ca5b1-55c6-441b-a0fb-c1578bf7977a"
+   azuread_group = "daf670a0-9017-47cf-a7d0-4093b8dda533"
   }
 ]
