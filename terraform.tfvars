@@ -43,5 +43,9 @@ projects = [
   {
     name          = "Work-Allocation"
     azuread_group = "cdeb331b-adfe-46a7-a2c8-a628e2d35d96"
+  },
+  {
+    name          = "FaCT"
+    azuread_group = "daf670a0-9017-47cf-a7d0-4093b8dda533"
   }
 ]
