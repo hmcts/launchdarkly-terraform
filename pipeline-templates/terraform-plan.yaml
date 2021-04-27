@@ -10,7 +10,6 @@ jobs:
         displayName: Init - launchdarkly
         inputs:
           command: 'init'
-          commandOptions: '-lock=false' # don't lock on PRs / validate phase
           backendType: 'azurerm'
           backendServiceArm: 'DTS-CFTPTL-INTSVC'
           backendAzureRmResourceGroupName: 'core-infra-intsvc-rg'

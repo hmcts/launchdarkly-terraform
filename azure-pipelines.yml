@@ -35,7 +35,7 @@ pr:
       - variables.tf
 
 variables:
-  terraformVersion: 0.12.20
+  terraformVersion: 0.15.1
   agentPool: 'ubuntu-18.04'
 
 stages:
@@ -62,13 +62,13 @@ stages:
               testResultsFormat: NUnit
               failTaskOnFailedTests: true
             condition: always()
-        
+
       - template: pipeline-templates/terraform-plan.yaml
         parameters:
-          build: $(Build.BuildNumber)  
+          build: $(Build.BuildNumber)
           agentPool: ${{ variables.agentPool }}
-          terraformVersion: ${{ variables.terraformVersion }}   
-          
+          terraformVersion: ${{ variables.terraformVersion }}
+
       - job: Archive
         pool:
           vmImage: ${{ variables.agentPool }}
@@ -84,7 +84,7 @@ stages:
   - stage: ApplyLaunchdarkly
     dependsOn: GetArtifacts
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-    jobs: 
+    jobs:
       - template: pipeline-templates/terraform-apply.yaml
         parameters:
           build: $(Build.BuildNumber)
