@@ -1,3 +1,12 @@
+data "azuread_group" "developers" {
+  for_each = {
+    for project in var.project :
+    project.name => project
+  }
+
+  display_name = each.value.azuread_group
+}
+
 resource "launchdarkly_custom_role" "roles" {
   for_each = {
     for project in var.project :
@@ -5,8 +14,8 @@ resource "launchdarkly_custom_role" "roles" {
   }
 
   name        = each.value.name
-  key         = each.value.azuread_group
-  description = "Allows development access to users in the AzureAD group ${each.value.name} for the ${each.value.name} project"
+  key         = data.azuread_group.developers[each.value.name].object_id
+  description = "Allows development access to users in the AzureAD group ${each.value.azuread_group} for the ${each.value.name} project"
 
   policy_statements {
     effect    = "allow"
