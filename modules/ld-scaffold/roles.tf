@@ -8,37 +8,37 @@ resource "launchdarkly_custom_role" "roles" {
   key         = each.value.azuread_group
   description = "Allows development access to users in the AzureAD group ${each.value.name} for the ${each.value.name} project"
 
-  policy {
+  policy_statements {
     effect    = "allow"
     resources = ["proj/${each.value.name}"]
     actions   = ["*"]
   }
 
-  policy {
+  policy_statements {
     effect    = "allow"
     resources = ["proj/${each.value.name}"]
     actions   = ["*"]
   }
 
-  policy {
+  policy_statements {
     effect    = "allow"
     resources = ["proj/${each.value.name}:env/*"]
     actions   = ["*"]
   }
 
-  policy {
+  policy_statements {
     effect    = "deny"
     resources = ["proj/${each.value.name}:env/*"]
     actions   = ["createEnvironment", "deleteEnvironment"]
   }
 
-  policy {
+  policy_statements {
     effect    = "allow"
     resources = ["proj/${each.value.name}:env/*:flag/*"]
     actions   = ["*"]
   }
 
-  policy {
+  policy_statements {
     effect    = "allow"
     resources = ["proj/${each.value.name}:env/*:segment/*"]
     actions   = ["*"]
