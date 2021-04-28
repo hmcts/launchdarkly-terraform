@@ -4,7 +4,7 @@ resource "launchdarkly_project" "project" {
     project.name => project
   }
   key  = each.value.name
-  name = each.value.name
+  name = lookup(each.value, "display_name", each.value.name)
 
   tags = var.tags
 
@@ -18,5 +18,3 @@ resource "launchdarkly_project" "project" {
     }
   }
 }
-
-

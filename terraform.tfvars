@@ -47,5 +47,20 @@ projects = [
   {
     name          = "FaCT"
     azuread_group = "DTS FaCT"
-  }
+  },
+  {
+    name          = "expert-ui"
+    display_name  = "Expert UI"
+    azuread_group = "dcd_group_expertui_v2"
+  },
+  {
+    name          = "fpla"
+    display_name  = "FPLA"
+    azuread_group = "dcd_group_fpl_v2"
+  },
+  {
+    name          = "ia"
+    display_name  = "Immigration and Asylum"
+    azuread_group = "dcd_ia"
+  },
 ]
