@@ -41,6 +41,10 @@ projects = [
     azuread_group = "dcd_group_unspec_v2"
   },
   {
+    name          = "civil"
+    azuread_group = "DTS Civil"
+  },
+  {
     name          = "Work-Allocation"
     azuread_group = "dcd_group_wa_v2"
   },
