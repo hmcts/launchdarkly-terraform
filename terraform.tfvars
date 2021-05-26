@@ -37,10 +37,6 @@ projects = [
     azuread_group = "dcd_group_accessmanagement_v2"
   },
   {
-    name          = "unspec"
-    azuread_group = "dcd_group_unspec_v2"
-  },
-  {
     name          = "civil"
     azuread_group = "DTS Civil"
   },
