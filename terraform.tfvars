@@ -63,4 +63,9 @@ projects = [
     display_name  = "Immigration and Asylum"
     azuread_group = "dcd_ia"
   },
+  {
+    name          = "idam"
+    display_name  = "IDAM"
+    azuread_group = "dcd_idam"
+  },
 ]
