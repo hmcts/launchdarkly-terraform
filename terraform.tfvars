@@ -68,4 +68,9 @@ projects = [
     display_name  = "IDAM"
     azuread_group = "dcd_idam"
   },
+  {
+    name          = "VH"
+    display_name  = "Video Hearings"
+    azuread_group = "dcd_videohearings"
+  }
 ]
