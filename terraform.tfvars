@@ -17,6 +17,10 @@ projects = [
     azuread_group = "dcd_group_pcq_v2"
   },
   {
+    name          = "LAU"
+    azuread_group = "DTS LAU"
+  },
+  {
     name          = "Divorce"
     azuread_group = "dcd_divorce"
   },
