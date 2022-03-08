@@ -81,5 +81,10 @@ projects = [
     name          = "prl"
     display_name  = "Private Law"
     azuread_group = "DTS Family Private Law"
+  },
+  {
+    name          = "pip"
+    display_name  = "Publication and Information"
+    azuread_group = "Publication and Information"
   }
 ]
