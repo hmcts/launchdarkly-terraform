@@ -85,6 +85,6 @@ projects = [
   {
     name          = "pip"
     display_name  = "Publication and Information"
-    azuread_group = "Publication and Information"
+    azuread_group = "DTS Publication and Information"
   }
 ]
