@@ -86,5 +86,10 @@ projects = [
     name          = "pip"
     display_name  = "Publication and Information"
     azuread_group = "DTS Publication and Information"
+  },
+  {
+    name          = "adoption"
+    display_name  = "Adoption"
+    azuread_group = "DTS Adoption"
   }
 ]
