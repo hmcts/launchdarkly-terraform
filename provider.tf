@@ -8,7 +8,7 @@ provider "launchdarkly" {
 
 terraform {
   backend "azurerm" {}
-  required_version = "=0.15.1"
+  required_version = "=0.15.5"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
