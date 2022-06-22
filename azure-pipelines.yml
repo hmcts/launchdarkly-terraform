@@ -35,7 +35,7 @@ pr:
       - variables.tf
 
 variables:
-  terraformVersion: 0.15.1
+  terraformVersion: 1.2.3
   agentPool: 'ubuntu-18.04'
 
 stages:
