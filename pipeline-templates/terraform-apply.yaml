@@ -8,6 +8,11 @@ jobs:
       runOnce:
         deploy:
           steps:
+            - checkout: cnp-azuredevops-libraries
+              displayName: Checkout cnp-azuredevops-libraries
+              clean: true
+              persistCredentials: false
+              path: cnp-azuredevops-libraries
             - download: current
               displayName: 'Download artifacts'
               artifact: drop
@@ -18,9 +23,10 @@ jobs:
               inputs:
                 sourceFolder: '$(Pipeline.Workspace)/launchdarkly${{ parameters.build }}plan'
                 targetFolder: '$(Pipeline.Workspace)/drop'
-            - task: TerraformInstaller@0
+            - task: Bash@3
+              displayName: Terraform install (tfenv)
               inputs:
-                terraformVersion: ${{ parameters.terraformVersion }}
+                filePath: $(Pipeline.Workspace)/cnp-azuredevops-libraries/scripts/tfenv-install-terraform.sh
             - task: TerraformCLI@0
               displayName: Init - launchdarkly
               inputs:

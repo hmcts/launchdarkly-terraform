@@ -34,8 +34,15 @@ pr:
       - terraform.tfvars
       - variables.tf
 
+resources:
+  repositories:
+  - repository: cnp-azuredevops-libraries
+    type: github
+    ref: refs/heads/master
+    name: hmcts/cnp-azuredevops-libraries
+    endpoint: 'hmcts'
+
 variables:
-  terraformVersion: 1.2.3
   agentPool: 'ubuntu-18.04'
 
 stages:
@@ -45,9 +52,6 @@ stages:
         pool:
           vmImage: ${{ variables.agentPool }}
         steps:
-          - task: TerraformInstaller@0
-            inputs:
-              terraformVersion: ${{ variables.terraformVersion }}
           - task: PowerShell@2
             displayName: Run tests
             inputs:
@@ -67,7 +71,6 @@ stages:
         parameters:
           build: $(Build.BuildNumber)
           agentPool: ${{ variables.agentPool }}
-          terraformVersion: ${{ variables.terraformVersion }}
 
       - job: Archive
         pool:
@@ -89,4 +92,3 @@ stages:
         parameters:
           build: $(Build.BuildNumber)
           agentPool: ${{ variables.agentPool }}
-          terraformVersion: ${{ variables.terraformVersion }}
