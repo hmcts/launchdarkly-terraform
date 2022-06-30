@@ -24,7 +24,7 @@ jobs:
           commandOptions: '-out=launchdarkly${{ parameters.build }}plan'
           workingDirectory: '$(System.DefaultWorkingDirectory)'
           environmentServiceName: 'DTS-CFTPTL-INTSVC'
-          publishPlanResults: '${{ parameters.environment }}-'${{ parameters.build }}'
+          publishPlanResults: '${{ parameters.build }}'
       - task: Bash@3
         displayName: "Remove local tfstate"
         inputs:
