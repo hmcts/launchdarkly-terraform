@@ -91,5 +91,10 @@ projects = [
     name          = "adoption"
     display_name  = "Adoption"
     azuread_group = "DTS Adoption"
+  },
+  {
+    name          = "sptribs"
+    display_name  = "Special Tribunals"
+    azuread_group = "DTS Special Tribunals"
   }
 ]
