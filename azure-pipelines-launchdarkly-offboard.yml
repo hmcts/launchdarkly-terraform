@@ -39,7 +39,7 @@ stages:
             ConnectedServiceName: 'DTS-CFTPTL-INTSVC'
             keyVaultName: 'cftptl-intsvc'
             secretsFilter: 'launchdarkly-access-token'
-        - task: Bash@3
+        - task: Bash@3.211.0
           displayName: 'Remove user from launchdarkly'
           inputs:
             filePath: pipeline-scripts/launchdarkly-offboard.sh
