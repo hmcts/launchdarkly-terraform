@@ -8,6 +8,7 @@ trigger:
   paths:
     include:
       - azure-pipelines-launchdarkly-offboard-inactive.yml
+      - pipeline-scripts/launchdarkly-offboard.sh
 pr:
   branches:
     include:
@@ -15,6 +16,7 @@ pr:
   paths:
     include:
       - azure-pipelines-launchdarkly-offboard-inactive.yml
+      - pipeline-scripts/launchdarkly-offboard.sh
 
 schedules:
 - cron: "0 12 * * 0"
