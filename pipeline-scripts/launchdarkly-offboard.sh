@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 shopt -s nocasematch
-window=5097615
+window=2548807
 currenttime=$(date +%s)
 IFS=,
 
