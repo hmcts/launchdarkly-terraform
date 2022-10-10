@@ -32,7 +32,7 @@ stages:
         pool:
           vmImage: ${{ variables.agentPool }}
         steps:
-        - task: AzureKeyVault@1
+        - task: AzureKeyVault@1.212.0
           displayName: 'Get API token'
           inputs:
             runAsPreJob: false
