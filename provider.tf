@@ -16,7 +16,7 @@ terraform {
     }
     launchdarkly = {
       source  = "launchdarkly/launchdarkly"
-      version = "2.7.0"
+      version = "2.9.4"
     }
   }
 }
