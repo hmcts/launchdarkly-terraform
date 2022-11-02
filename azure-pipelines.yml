@@ -45,6 +45,7 @@ resources:
 variables:
   terraformVersion: 1.2.3
   agentPool: 'ubuntu-latest'
+  timeoutInMinutes: 60
 
 stages:
   - stage: Precheck
