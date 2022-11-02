@@ -22,7 +22,7 @@ resources:
 
 variables:
   timeoutInMinutes: 60
-  agentPool: 'ubuntu-18.04'
+  agentPool: 'ubuntu-latest'
   
 stages:
   - stage: launchdarkly_Offboard_Users

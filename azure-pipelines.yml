@@ -36,7 +36,7 @@ pr:
 
 variables:
   terraformVersion: 1.2.3
-  agentPool: 'ubuntu-18.04'
+  agentPool: 'ubuntu-latest'
 
 stages:
   - stage: GetArtifacts
