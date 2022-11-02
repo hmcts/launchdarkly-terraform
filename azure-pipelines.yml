@@ -39,6 +39,17 @@ variables:
   agentPool: 'ubuntu-latest'
 
 stages:
+  - stage: PreChecks
+    displayName: 'PreChecks'
+    jobs:
+      - job: PreChecks
+        steps:
+          - template: pipeline-templates/terraform-precheck.yaml
+            parameters:
+              keyvaultName: infra-vault-nonprod
+              keyvaultSecret: 'azure-devops-token'
+              serviceConnection: azurerm-sandbox
+
   - stage: GetArtifacts
     jobs:
       - job: Validate
