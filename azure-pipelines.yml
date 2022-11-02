@@ -34,23 +34,31 @@ pr:
       - terraform.tfvars
       - variables.tf
 
+resources:
+  repositories:
+  - repository: cnp-azuredevops-libraries
+    type: github
+    ref: refs/heads/master
+    name: hmcts/cnp-azuredevops-libraries
+    endpoint: 'hmcts (1)'
+
 variables:
   terraformVersion: 1.2.3
   agentPool: 'ubuntu-latest'
 
 stages:
-  - stage: PreChecks
-    displayName: 'PreChecks'
+  - stage: Precheck
     jobs:
-      - job: PreChecks
+      - job: Precheck
         pool:
           vmImage: ${{ variables.agentPool }}
+        timeoutInMinutes: ${{ variables.timeoutInMinutes }}
         steps:
-          - template: pipeline-templates/terraform-precheck.yaml
+          - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
             parameters:
-              keyvaultName: infra-vault-nonprod
+              keyvaultName: 'infra-vault-nonprod'
               keyvaultSecret: 'azure-devops-token'
-              serviceConnection: azurerm-sandbox
+              serviceConnection: 'DCD-CFT-Sandbox'
 
   - stage: GetArtifacts
     jobs:
