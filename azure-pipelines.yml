@@ -43,6 +43,8 @@ stages:
     displayName: 'PreChecks'
     jobs:
       - job: PreChecks
+        pool:
+          vmImage: ${{ variables.agentPool }}
         steps:
           - template: pipeline-templates/terraform-precheck.yaml
             parameters:
