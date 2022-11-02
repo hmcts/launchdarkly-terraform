@@ -14,9 +14,13 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "3.10.0"
     }
+    azuread = {
+      source  = "hashicorp/azuread"
+      version = "1.4.0"
+    }
     launchdarkly = {
       source  = "launchdarkly/launchdarkly"
-      version = "2.7.0"
+      version = "2.9.4"
     }
   }
 }
