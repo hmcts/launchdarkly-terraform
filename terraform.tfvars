@@ -96,5 +96,10 @@ projects = [
     name          = "sptribs"
     display_name  = "Special Tribunals"
     azuread_group = "DTS Special Tribunals"
-  }
+  },
+  {
+    name          = "et"
+    display_name  = "Employment Tribunals"
+    azuread_group = "DTS Employment Tribunals"
+  },
 ]
