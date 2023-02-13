@@ -102,4 +102,9 @@ projects = [
     display_name  = "Employment Tribunals"
     azuread_group = "DTS Employment Tribunals"
   },
+  {
+    name          = "juror"
+    display_name  = "Juror"
+    azuread_group = "DTS Juror"
+  },
 ]
