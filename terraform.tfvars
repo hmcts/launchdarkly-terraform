@@ -55,7 +55,10 @@ projects = [
   {
     name          = "expert-ui"
     display_name  = "Expert UI"
-    azuread_group = "dcd_group_expertui_v2"
+    azuread_group = "dcd_group_expertui_v2",
+    additional_environments = [
+      "AAT",
+    ]
   },
   {
     name          = "fpla"
@@ -81,11 +84,6 @@ projects = [
     name          = "prl"
     display_name  = "Private Law"
     azuread_group = "DTS Family Private Law"
-  },
-  {
-    name          = "pip"
-    display_name  = "Publication and Information"
-    azuread_group = "DTS Publication and Information"
   },
   {
     name          = "adoption"

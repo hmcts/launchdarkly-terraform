@@ -1,5 +1,6 @@
 provider "azurerm" {
   features {}
+  subscription_id = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
 }
 
 provider "launchdarkly" {
@@ -8,15 +9,14 @@ provider "launchdarkly" {
 
 terraform {
   backend "azurerm" {}
-  required_version = "=1.2.3"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.52.0"
+      version = "3.55.0"
     }
     azuread = {
       source  = "hashicorp/azuread"
-      version = "1.6.0"
+      version = "2.38.0"
     }
     launchdarkly = {
       source  = "launchdarkly/launchdarkly"

@@ -9,7 +9,10 @@ resource "launchdarkly_project" "project" {
   tags = var.tags
 
   dynamic "environments" {
-    for_each = toset(var.environment)
+    for_each = toset(
+      concat(var.environment, lookup(each.value, "additional_environments", []))
+    )
+
     content {
       name  = environments.value
       key   = lower(environments.value)
