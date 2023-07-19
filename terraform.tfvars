@@ -105,4 +105,9 @@ projects = [
     display_name  = "Juror"
     azuread_group = "DTS Juror"
   },
+  {
+    name          = "send-letter-service"
+    display_name  = "Send Letter Service"
+    azuread_group = "dcd_group_bulkscan_v2"
+  },
 ]
