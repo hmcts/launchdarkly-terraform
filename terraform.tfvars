@@ -110,4 +110,9 @@ projects = [
     display_name  = "Send Letter Service"
     azuread_group = "dcd_group_bulkscan_v2"
   },
+  {
+    name          = "bulk-scan-processor"
+    display_name  = "Bulk Scan Processor"
+    azuread_group = "dcd_group_bulkscan_v2"
+  },
 ]
