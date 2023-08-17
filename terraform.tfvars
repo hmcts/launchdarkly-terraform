@@ -115,4 +115,9 @@ projects = [
     display_name  = "Bulk Scan Processor"
     azuread_group = "dcd_group_bulkscan_v2"
   },
+  {
+    name          = "pre"
+    display_name  = "Pre-recorded Evidence"
+    azuread_group = "DTS Pre-recorded Evidence"
+  },
 ]
