@@ -12,15 +12,15 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.63.0"
+      version = "3.70.0"
     }
     azuread = {
       source  = "hashicorp/azuread"
-      version = "2.40.0"
+      version = "2.41.0"
     }
     launchdarkly = {
       source  = "launchdarkly/launchdarkly"
-      version = "2.12.0"
+      version = "2.15.0"
     }
   }
 }
