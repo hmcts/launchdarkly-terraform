@@ -109,13 +109,8 @@ projects = [
     azuread_group = "DTS Juror"
   },
   {
-    name          = "send-letter-service"
-    display_name  = "Send Letter Service"
-    azuread_group = "dcd_group_bulkscan_v2"
-  },
-  {
-    name          = "bulk-scan"
-    display_name  = "Bulk Scan"
+    name          = "bulk-scan-print"
+    display_name  = "Bulk Scan Print"
     azuread_group = "dcd_group_bulkscan_v2"
   },
   {
