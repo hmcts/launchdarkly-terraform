@@ -74,6 +74,9 @@ projects = [
     name          = "idam"
     display_name  = "IDAM"
     azuread_group = "dcd_idam"
+    additional_environments = [
+      "AAT",
+    ]
   },
   {
     name          = "VH"
