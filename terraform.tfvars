@@ -106,7 +106,12 @@ projects = [
   {
     name          = "juror"
     display_name  = "Juror"
-    azuread_group = "DTS Juror"
+    azuread_group = "DTS Juror",
+    additional_environments = [
+      "Development",
+      "Demo",
+      "Preview",
+    ]
   },
   {
     name          = "bulk-scan-print"
