@@ -126,6 +126,6 @@ projects = [
   {
     name          = "opal"
     display_name  = "Opal Project"
-    azuread_group = "opal_project"
+    azuread_group = "DTS Green on Black"
   }
 ]
