@@ -123,4 +123,9 @@ projects = [
     display_name  = "Pre-recorded Evidence"
     azuread_group = "DTS Pre-recorded Evidence"
   },
+  {
+    name          = "opal"
+    display_name  = "Opal Project"
+    azuread_group = "DTS Green on Black"
+  }
 ]
