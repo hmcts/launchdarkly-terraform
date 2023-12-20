@@ -91,7 +91,7 @@ projects = [
   {
     name          = "fis"
     display_name  = "Family integration services"
-    azuread_group = "DTS Family Private Law"
+    azuread_group = "DTS Family Integration"
   },
   {
     name          = "adoption"
