@@ -44,7 +44,6 @@ variables:
   terraformVersion: 1.2.3
   agentPool: 'ubuntu-latest'
   timeoutInMinutes: 60
-  baseDirectory: /
 
 stages:
   - stage: Precheck
@@ -59,7 +58,6 @@ stages:
               keyvaultName: 'infra-vault-nonprod'
               keyvaultSecret: 'azure-devops-sp-token'
               serviceConnection: 'azurerm-sandbox'
-              baseDirectory: ${{ variables.baseDirectory }}
 
   # - stage: GetArtifacts
   #   jobs:
