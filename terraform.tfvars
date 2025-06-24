@@ -127,5 +127,10 @@ projects = [
     name          = "opal"
     display_name  = "Opal Project"
     azuread_group = "DTS Green on Black"
+  },
+  {
+    name          = "PCS"
+    display_name  = "Possession Claim Service"
+    azuread_group = "DTS Possession Claim Service"
   }
 ]
