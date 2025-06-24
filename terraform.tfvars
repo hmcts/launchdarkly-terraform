@@ -130,7 +130,7 @@ projects = [
   },
   {
     name          = "PCS"
-    display_name  = "Possessions Claim Service"
+    display_name  = "Possession Claim Service"
     azuread_group = "DTS Possession Claim Service"
   }
 ]
