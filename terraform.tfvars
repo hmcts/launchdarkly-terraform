@@ -131,6 +131,6 @@ projects = [
   {
     name          = "PCS"
     display_name  = "Possession Claim Service"
-    azuread_group = "DTS Possession Claim Service"
+    azuread_group = "dcd_group_ado_user_v2"
   }
 ]
