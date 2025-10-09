@@ -18,7 +18,7 @@ jobs:
               inputs:
                 sourceFolder: '$(Pipeline.Workspace)/launchdarkly${{ parameters.build }}plan'
                 targetFolder: '$(Pipeline.Workspace)/drop'
-            - task: TerraformInstaller@0
+            - task: TerraformInstaller@2
               inputs:
                 terraformVersion: ${{ parameters.terraformVersion }}
             - task: TerraformCLI@2
