@@ -6,7 +6,7 @@ jobs:
       - task: TerraformInstaller@0
         inputs:
           terraformVersion: ${{ parameters.terraformVersion }}
-      - task: TerraformCLI@0
+      - task: TerraformCLI@2
         displayName: Init - launchdarkly
         inputs:
           command: 'init'
@@ -17,7 +17,7 @@ jobs:
           backendAzureRmContainerName: 'tfstate'
           backendAzureRmKey: 'launchdarkly.tfstate'
           workingDirectory: '$(System.DefaultWorkingDirectory)'
-      - task: TerraformCLI@0
+      - task: TerraformCLI@2
         displayName: Plan - launchdarkly
         inputs:
           command: 'plan'
