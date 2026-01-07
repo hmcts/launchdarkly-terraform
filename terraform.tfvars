@@ -69,6 +69,9 @@ projects = [
     name          = "ia"
     display_name  = "Immigration and Asylum"
     azuread_group = "dcd_ia"
+    additional_environments = [
+      "AAT",
+    ]
   },
   {
     name          = "idam"
