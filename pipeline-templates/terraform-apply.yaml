@@ -24,6 +24,7 @@ jobs:
             - template: steps/install-use-tfswitch.yaml@cnp-azuredevops-libraries
               parameters:
                 tfswitchArgs: -b ~/.local/bin/terraform
+                workingDirectory: '$(Pipeline.Workspace)/drop'
             
             - task: TerraformCLI@2
               displayName: Init - launchdarkly
