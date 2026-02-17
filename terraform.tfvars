@@ -135,5 +135,10 @@ projects = [
     name          = "PCS"
     display_name  = "Possession Claim Service"
     azuread_group = "DTS Possession Claim Service"
+  },
+  { 
+    name          = "CaTH",
+    display_name  = "Courts and Tribunal Hearing Service",
+    azuread_group = "DTS PIP Non-Prod"
   }
 ]
