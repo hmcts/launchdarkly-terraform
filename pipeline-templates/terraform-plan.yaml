@@ -3,6 +3,9 @@ jobs:
     pool:
       vmImage: ${{ parameters.agentPool }}
     steps:
+      - template: steps/install-use-tfswitch.yaml@cnp-azuredevops-libraries
+        parameters:
+          tfswitchArgs: -b ~/.local/bin/terraform    
       - task: TerraformCLI@2
         displayName: Init - launchdarkly
         inputs:

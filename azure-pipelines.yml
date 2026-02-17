@@ -61,11 +61,6 @@ stages:
 
   - stage: GetArtifacts
     jobs:
-
-      - template: steps/install-use-tfswitch.yaml@cnp-azuredevops-libraries
-        parameters:
-          tfswitchArgs: -b ~/.local/bin/terraform
-
       - template: pipeline-templates/terraform-plan.yaml
         parameters:
           build: $(Build.BuildNumber)
