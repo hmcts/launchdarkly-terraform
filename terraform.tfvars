@@ -130,6 +130,12 @@ projects = [
     name          = "opal"
     display_name  = "Opal Project"
     azuread_group = "DTS Green on Black"
+    additional_environments = [
+      "Staging",
+      "Demo",
+      "PerfTest",
+      "Ithc",
+    ]
   },
   {
     name          = "PCS"
