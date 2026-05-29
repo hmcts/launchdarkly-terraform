@@ -135,6 +135,7 @@ projects = [
       "Demo",
       "PerfTest",
       "Ithc",
+      "Dev",
     ]
   },
   {
