@@ -58,6 +58,7 @@ projects = [
     azuread_group = "dcd_group_expertui_v2",
     additional_environments = [
       "AAT",
+      "AM-Onboarding"
     ]
   },
   {
