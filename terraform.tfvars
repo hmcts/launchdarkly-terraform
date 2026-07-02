@@ -128,9 +128,10 @@ projects = [
     azuread_group = "DTS Pre-recorded Evidence"
   },
   {
-    name          = "opal"
-    display_name  = "Opal Project"
-    azuread_group = "DTS Green on Black"
+    name                = "opal"
+    display_name        = "Opal Project"
+    azuread_group       = "DTS Green on Black"
+    admin_azuread_group = "DTS LaunchDarkly Opal Admin"
     additional_environments = [
       "Staging",
       "Demo",
