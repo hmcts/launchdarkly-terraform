@@ -25,3 +25,19 @@ Where:
 * name = the name of the project/team.
 * azuread_group= Display name of the Azure AD Group required in the prerequisites
 
+## Admin/member split
+
+Add `admin_azuread_group` to split a project into `<name>_admin` (full access) and
+`<name>_member` (`azuread_group`, full non-prod, read-only on prod flags):
+
+```
+{
+    name                = "opal"
+    display_name        = "Opal Project"
+    azuread_group       = "DTS Green on Black"
+    admin_azuread_group = "DTS LaunchDarkly Opal Admin"
+},
+```
+
+Protected environments default to `production`; override with `member_protected_environments`.
+
