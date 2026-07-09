@@ -149,5 +149,10 @@ projects = [
     name          = "CaTH",
     display_name  = "Courts and Tribunal Hearing Service",
     azuread_group = "DTS PIP Non-Prod"
+  },
+  {
+    name          = "financial-remedy",
+    display_name  = "Financial Remedy",
+    azuread_group = "DTS Financial Remedy"
   }
 ]
