@@ -141,6 +141,19 @@ projects = [
     ]
   },
   {
+    name                = "darts"
+    display_name        = "DARTS"
+    azuread_group       = "DTS Darts Modernisation"
+    admin_azuread_group = "DTS LaunchDarkly Darts Admin"
+    additional_environments = [
+      "Staging",
+      "Demo",
+      "PerfTest",
+      "Ithc",
+      "Dev",
+    ]
+  },
+  {
     name          = "PCS"
     display_name  = "Possession Claim Service"
     azuread_group = "DTS Possession Claim Service"
