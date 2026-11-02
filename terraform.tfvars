@@ -154,9 +154,10 @@ projects = [
     ]
   },
   {
-    name          = "PCS"
-    display_name  = "Possession Claim Service"
-    azuread_group = "DTS Possession Claim Service"
+    name                = "PCS"
+    display_name        = "Possession Claim Service"
+    azuread_group       = "DTS Possession Claim Service"
+    admin_azuread_group = "DTS PCS DB Access Eligible SC"
   },
   { 
     name          = "CaTH",
