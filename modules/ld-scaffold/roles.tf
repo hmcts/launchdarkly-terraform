@@ -104,6 +104,12 @@ moved {
   to   = launchdarkly_custom_role.member["opal"]
 }
 
+# Migrate the pre-split single PCS role into PCS_member in place
+moved {
+  from = launchdarkly_custom_role.roles["PCS"]
+  to   = launchdarkly_custom_role.member["PCS"]
+}
+
 resource "launchdarkly_custom_role" "member" {
   for_each = local.split_projects
 
